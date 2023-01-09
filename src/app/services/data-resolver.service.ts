@@ -10,8 +10,14 @@ import { enviroments } from '../environment/environment';
 export class DataResolverService implements Resolve<unknown>{
 
   private readonly http = inject(HttpClient)
-  
+  public name: string = ''
  resolve(): Observable<unknown> {
-     return this.http.get(`${enviroments.api}`)//
+     return this.http.get(`${enviroments.api}/?name=Morty`)
  }
+
+//  busquedaGet(name: string): Observable<unknown>{
+//   return this.http.get(`${enviroments.api}`)
+//  }
+
 }
+ 

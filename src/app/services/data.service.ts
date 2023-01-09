@@ -1,11 +1,14 @@
 import { Observable } from "rxjs"
 import { enviroments } from "../environment/environment"
 import { HttpClient } from '@angular/common/http'
-import { inject, Injectable } from '@angular/core';
+import { inject} from '@angular/core';
+import { PersonajeI } from "../models/personaje.interface";
+
 
 export class DataService {
     private readonly http = inject(HttpClient);
-    getData(): Observable<unknown> {
-        return this.http.get(`${enviroments.api}`)
+    
+    getData(): Observable<PersonajeI[]>{
+        return this.http.get<PersonajeI[]>(`${enviroments.api}/?name=morty`)
     }
 }

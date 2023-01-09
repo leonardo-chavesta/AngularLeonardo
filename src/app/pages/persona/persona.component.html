@@ -1,18 +1,57 @@
-<p>
-  <!-- {{persona | json }} -->
-</p>
-<div class="row">
-  <div class="col-sm" *ngFor="let persona of personas">
-    <div class="card " style="width: 18rem">
-      <img
-        class="card-img-top"
-        src="{{ persona?.image }}"
-        alt="Card image cap"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ persona?.name }}</h5>
-        <p class="card-text">{{ persona?.location?.name }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<mat-toolbar class="row mb-3 bRick">
+  <div class="col">
+    <div class="d-flex justify-content-between align-self-center">
+      <div>
+        <h2 class="text-light">Buscador</h2>
+      </div>
+      <div>
+        <button type="button" class="btn btn-secondary">Buscar</button>
+        &nbsp;
+        <button type="button" class="btn btn-outline-light">Limpiar</button>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+
+<form action="">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-sm">
+        <div class="form-group">
+          <label class="lead">Nombre:</label>
+          <input matInput type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label class="lead">Episodio:</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label class="lead">Temporada:</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="container card text-center">
+  <br>
+  <div class="row ">
+    <div class="col-sm mb-3 " *ngFor="let persona of personas">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="{{ persona?.image }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ persona?.name }}</h5>
+          <p class="card-text">{{ persona?.location?.name }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
       </div>
     </div>
   </div>
