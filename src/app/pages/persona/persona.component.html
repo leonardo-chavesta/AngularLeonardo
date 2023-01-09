@@ -1,12 +1,19 @@
 <p>
-    <!-- {{persona | json }} -->
+  <!-- {{persona | json }} -->
 </p>
-
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src={{imagen}} alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{persona}}</h5>
-      <p class="card-text">{{descripciont}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row">
+  <div class="col-sm" *ngFor="let persona of personas">
+    <div class="card " style="width: 18rem">
+      <img
+        class="card-img-top"
+        src="{{ persona?.image }}"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ persona?.name }}</h5>
+        <p class="card-text">{{ persona?.location?.name }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
   </div>
+</div>

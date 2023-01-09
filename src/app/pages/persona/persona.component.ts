@@ -13,12 +13,15 @@ export class PersonaComponent implements OnInit {
   public persona = null
   public descripciont = null
   public imagen = null
+  public personas : any[] = []
   ngOnInit() {
     this.router.data.subscribe(({ myData }) => {
       console.log(myData.results);
       this.persona = myData.results[0]?.name;
       this.descripciont = myData.results[0]?.location?.name;
       this.imagen = myData.results[0]?.image;
+      this.personas = myData.results
+      
     })
   }
 
